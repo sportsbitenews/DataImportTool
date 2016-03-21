@@ -85,7 +85,7 @@ public class RecurringDepositTransactionWorkbookPopulator extends AbstractWorkbo
 		if(result.isSuccess()) {
 			try {
 	        	restClient.createAuthToken();
-	            content = restClient.get("savingsaccounts?limit=-1");
+	            content = restClient.get("recurringdepositaccounts?limit=-1");
 	            Gson gson = new Gson();
 	            JsonParser parser = new JsonParser();
 	            JsonObject obj = parser.parse(content).getAsJsonObject();
