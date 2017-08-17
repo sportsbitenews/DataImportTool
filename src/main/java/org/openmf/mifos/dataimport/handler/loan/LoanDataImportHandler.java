@@ -160,17 +160,20 @@ public class LoanDataImportHandler extends AbstractDataImportHandler {
         String arrearsTolerance = readAsString(ARREARS_TOLERANCE_COL, row);
         String repaymentStrategy = readAsString(REPAYMENT_STRATEGY_COL, row);
         String repaymentStrategyId = "";
-        if (repaymentStrategy.equalsIgnoreCase("Mifos style"))
+        if (repaymentStrategy.equalsIgnoreCase("Penalties Fees Interest Principal order"))
             repaymentStrategyId = "1";
-        else if (repaymentStrategy.equalsIgnoreCase("Heavensfamily"))
+        else if (repaymentStrategy.equalsIgnoreCase("HeavensFamily Unique"))
             repaymentStrategyId = "2";
-        else if (repaymentStrategy.equalsIgnoreCase("Creocore"))
+        else if (repaymentStrategy.equalsIgnoreCase("Creocore Unique"))
             repaymentStrategyId = "3";
-        else if (repaymentStrategy.equalsIgnoreCase("RBI (India)"))
+        else if (repaymentStrategy.equalsIgnoreCase("Overdue/Due Fee/Int Principal"))
             repaymentStrategyId = "4";
         else if (repaymentStrategy.equalsIgnoreCase("Principal Interest Penalties Fees Order"))
             repaymentStrategyId = "5";
-        else if (repaymentStrategy.equalsIgnoreCase("Interest Principal Penalties Fees Order")) repaymentStrategyId = "6";
+        else if (repaymentStrategy.equalsIgnoreCase("Interest Principal Penalties Fees Order"))
+			repaymentStrategyId = "6";
+		else if (repaymentStrategy.equalsIgnoreCase("Early Repayment Strategy"))
+			repaymentStrategyId = "7";
         String graceOnPrincipalPayment = readAsString(GRACE_ON_PRINCIPAL_PAYMENT_COL, row);
         String graceOnInterestPayment = readAsString(GRACE_ON_INTEREST_PAYMENT_COL, row);
         String graceOnInterestCharged = readAsString(GRACE_ON_INTEREST_CHARGED_COL, row);
